@@ -8,8 +8,6 @@ import ToastUiEditor from './components/toastUiEditor';
 
 import { tryParseJSON } from '../../../common/utils/utils';
 
-
-
 CustomElement.init((_element, _context) => {
   // const value = tryParseJSON(element.value || '', {});
   // CustomElement.setHeight(((element.config || {}) as any).height || 400);
