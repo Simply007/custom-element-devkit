@@ -1,11 +1,19 @@
 
 import React from 'react';
+
+import { Editor } from '@toast-ui/react-editor';
+
+import 'tui-editor/dist/tui-editor-extChart';
+import 'tui-editor/dist/tui-editor-extUML';
+import 'tui-editor/dist/tui-editor-extTable';
+import 'tui-editor/dist/tui-editor-extColorSyntax';
+import 'tui-editor/dist/tui-editor-extScrollSync';
+
 import 'codemirror/lib/codemirror.css';
 import 'tui-editor/dist/tui-editor.min.css';
-import 'tui-editor/dist/tui-editor-contents.min.css';
-import { Editor } from '@toast-ui/react-editor';
-import 'tui-editor/dist/tui-editor-extChart';
+import 'tui-color-picker/dist/tui-color-picker.min.css';
 
+import './ToastUiEditor.css';
 
 
 class ToastUiEditor extends React.Component {
@@ -13,7 +21,7 @@ class ToastUiEditor extends React.Component {
   editorRef = React.createRef();
 
   storeValue = () => {
-    console.log((this.editorRef.current as any).getInstance());
+    console.log((this.editorRef.current as any).getInstance().getValue());
   };
 
   render() {
@@ -22,7 +30,6 @@ class ToastUiEditor extends React.Component {
         <Editor
           usageStatistics={false}
           ref={this.editorRef}
-          previewStyle="vertical"
           initialValue="Ahoy"
           onChange={this.storeValue}
           exts={[
