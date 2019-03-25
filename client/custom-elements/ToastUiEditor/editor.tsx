@@ -9,13 +9,16 @@ import ToastUiEditor from './components/toastUiEditor';
 import { tryParseJSON } from '../../../common/utils/utils';
 
 CustomElement.init((element, _context) => {
-  // const value = tryParseJSON(element.value || '', {});
-  CustomElement.setHeight(((element.config || {}) as any).height || 400);
-
-  // CustomElement.setValue(JSON.stringify(value));
+  const height = ((element.config || {}) as any).height || 400;
+  CustomElement.setHeight(height);
 
   const editor = (
-    <ToastUiEditor/>
+    <ToastUiEditor
+      initialValue={element.value}
+      disabled={element.disabled}
+      CustomElementApi={CustomElement}
+      height={`${height}px`}
+    />
   );
 
   ReactDom.render(editor, document.querySelector('#reactapp'));
