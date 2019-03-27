@@ -64,6 +64,9 @@
   },
   "dependencies": {
     "commander": "^2.19.0",
-    "file-loader": "^3.0.1"
+    "file-loader": "^3.0.1",
+    "react": "^16.8.5",
+    "react-datepicker": "^2.3.0",
+    "react-dom": "^16.8.5"
   }
 }
